@@ -1,5 +1,5 @@
-# DevOps Usecase for Numeracle
-## Requirement provided by Numeracle:
+# Usecase 
+## Requirement:
 ### Use case 1 – Deploy Spring boot app in EKS cluster.
 <table>
   <tr><th>#</th><th>Tasks</th><th>Details</th></tr>
@@ -49,7 +49,7 @@ Below configurations are needed to run the jenkins pipeline:
   - Dockerhub login credential
  
 ### Steps to use:
-- Create a Jenkins pipeline job using the [Jenkinsfile](https://github.com/bmohanty6/numeracle-task/blob/main/Jenkinsfile)
+- Create a Jenkins pipeline job using the [Jenkinsfile](https://github.com/bmohanty6/learning-eks/blob/main/Jenkinsfile)
 - Trigger the pipeline.
 - After terraform pla stage, review the planned changes and approve to proceed for next step(apply)
 - After terraform apply is complete, take the DNS name of AWS load balancer from build output
@@ -60,7 +60,7 @@ Below configurations are needed to run the jenkins pipeline:
 - 3 Public and 3 private subnets
 - An EKS cluster with a node group deployed on private subnets
 - Cloudwatch logs enabled for EKS cluster
-- A namespace called `numeracle` is created with below resources
+- A namespace called `biswa` is created with below resources
   - A deployment for the demo application with one replicaset and one pod
   - A loadbalancer srvice that creates a AWS loadbalancer in public subnet
 - A cloudwatch Synthetics canary to monitor the demo application URL
