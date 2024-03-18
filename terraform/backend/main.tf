@@ -11,9 +11,9 @@ provider "aws" {
 }
 module "terraform_state_backend" {
   source = "cloudposse/tfstate-backend/aws"
-  namespace       = "numeracle"
+  namespace       = "biswa"
   stage           = "demo"
-  s3_bucket_name  = "numeracle-demo-tfstate"
+  s3_bucket_name  = "biswa-demo-tfstate"
 
   terraform_backend_config_file_path = "."
   terraform_backend_config_file_name = "backend.tf"

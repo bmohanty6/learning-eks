@@ -7,7 +7,7 @@ locals {
 module "canary_s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
 
-  bucket = "numeracle-task-canaries"
+  bucket = "biswa-task-canaries"
   acl    = "private"
 
   control_object_ownership = true
@@ -22,7 +22,7 @@ data "archive_file" "handler" {
   type = "zip"
   source {
     content = templatefile("./files/canary_source_template.tftpl", {
-      app_url = format("http://%s", kubernetes_service_v1.numeracle-demo-app.status.0.load_balancer.0.ingress.0.hostname)
+      app_url = format("http://%s", kubernetes_service_v1.biswa-demo-app.status.0.load_balancer.0.ingress.0.hostname)
     })
     filename = "python/demoURLMonitor.py"
   }

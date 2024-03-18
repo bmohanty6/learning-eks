@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "bmohanty6/numeracle-demo"
+        IMAGE_NAME = "bmohanty6/biswa-eks-demo"
         TAG_NAME   = "v${currentBuild.number}"
         DOCKERHUB_CREDENTIALS = credentials('dockerhub_bmohanty6')
     }
@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/bmohanty6/numeracle-task.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/bmohanty6/learning-eks.git']]])
             }
         }
         stage('build') {

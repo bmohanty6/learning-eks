@@ -8,7 +8,7 @@ provider "kubernetes" {
     args        = ["eks", "get-token", "--cluster-name", module.eks.cluster_name]
   }
 }
-resource "kubernetes_namespace_v1" "numeracle" {
+resource "kubernetes_namespace_v1" "biswa" {
   metadata {
     annotations = {
       name = var.namespace
@@ -19,7 +19,7 @@ resource "kubernetes_namespace_v1" "numeracle" {
     name = var.namespace
   }
 }
-resource "kubernetes_deployment_v1" "numeracle-demo-app" {
+resource "kubernetes_deployment_v1" "biswa-demo-app" {
   metadata {
     name      = var.k8s_app_name
     namespace = var.namespace
@@ -65,7 +65,7 @@ resource "kubernetes_deployment_v1" "numeracle-demo-app" {
   }
 }
 
-resource "kubernetes_service_v1" "numeracle-demo-app" {
+resource "kubernetes_service_v1" "biswa-demo-app" {
   metadata {
     name      = var.k8s_app_name
     namespace = var.namespace

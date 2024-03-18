@@ -3,11 +3,11 @@ terraform {
 
   backend "s3" {
     region   = "us-east-1"
-    bucket   = "numeracle-demo-tfstate"
+    bucket   = "biswa-demo-tfstate"
     key      = "terraform.tfstate"
     profile  = ""
     encrypt  = "true"
 
-    dynamodb_table = "numeracle-demo-lock"
+    dynamodb_table = "biswa-demo-lock"
   }
 }

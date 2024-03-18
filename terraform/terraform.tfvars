@@ -1,4 +1,4 @@
-cluster_name = "numeracle-demo"
+cluster_name = "biswa-demo"
 eks_managed_node_groups = {
   eks_ng_1 = {
     min_size     = 1
